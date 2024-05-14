@@ -1,0 +1,11 @@
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\bin\Debug\net8.0\ProsperityPartners.Domain.deps.json
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\bin\Debug\net8.0\ProsperityPartners.Domain.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\bin\Debug\net8.0\ProsperityPartners.Domain.pdb
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\obj\Debug\net8.0\ProsperityPartners.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\obj\Debug\net8.0\ProsperityPartners.Domain.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\obj\Debug\net8.0\ProsperityPartners.Domain.AssemblyInfo.cs
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\obj\Debug\net8.0\ProsperityPartners.Domain.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\obj\Debug\net8.0\ProsperityPartners.Domain.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\obj\Debug\net8.0\refint\ProsperityPartners.Domain.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\obj\Debug\net8.0\ProsperityPartners.Domain.pdb
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Domain\obj\Debug\net8.0\ref\ProsperityPartners.Domain.dll

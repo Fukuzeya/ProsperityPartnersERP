@@ -1,0 +1,15 @@
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\bin\Debug\net8.0\ProsperityPartners.Application.deps.json
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\bin\Debug\net8.0\ProsperityPartners.Application.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\bin\Debug\net8.0\ProsperityPartners.Application.pdb
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ProsperityPartners.Application.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ProsperityPartners.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ProsperityPartners.Application.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ProsperityPartners.Application.AssemblyInfo.cs
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ProsperityPartners.Application.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ProsperityPartners.Application.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\refint\ProsperityPartners.Application.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ProsperityPartners.Application.pdb
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ref\ProsperityPartners.Application.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\bin\Debug\net8.0\ProsperityPartners.Domain.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\bin\Debug\net8.0\ProsperityPartners.Domain.pdb
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\Prosperi.F991F705.Up2Date

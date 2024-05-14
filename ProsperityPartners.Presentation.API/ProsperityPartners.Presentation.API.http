@@ -1,0 +1,6 @@
+@ProsperityPartners.Presentation.API_HostAddress = http://localhost:5041
+
+GET {{ProsperityPartners.Presentation.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
