@@ -13,3 +13,4 @@ C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartne
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\bin\Debug\net8.0\ProsperityPartners.Domain.dll
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\bin\Debug\net8.0\ProsperityPartners.Domain.pdb
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\Prosperi.F991F705.Up2Date
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Application\obj\Debug\net8.0\ProsperityPartners.Application.sourcelink.json

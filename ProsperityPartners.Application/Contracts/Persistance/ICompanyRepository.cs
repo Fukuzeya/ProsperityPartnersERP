@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProsperityPartners.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace ProsperityPartners.Application.Contracts.Persistance
 {
     public interface ICompanyRepository
     {
-
+        Task<IEnumerable<Company>> GetAllCompanies(bool trackChanges);
     }
 }

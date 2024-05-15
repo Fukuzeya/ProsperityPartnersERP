@@ -17,3 +17,4 @@ C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartne
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Persistance\bin\Debug\net8.0\ProsperityPartners.Application.pdb
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Persistance\bin\Debug\net8.0\ProsperityPartners.Domain.pdb
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Persistance\obj\Debug\net8.0\Prosperi.6CCFCDBE.Up2Date
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Persistance\obj\Debug\net8.0\ProsperityPartners.Persistance.sourcelink.json

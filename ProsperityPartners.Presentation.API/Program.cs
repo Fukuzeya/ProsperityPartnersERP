@@ -2,15 +2,20 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
 using ProsperityPartners.Application;
+using ProsperityPartners.Domain.Contracts;
+using ProsperityPartners.Persistance;
 using ProsperityPartners.Presentation.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+
+// Add services to the container.
 builder.Services.ConfigureApplicationServices();
-builder.Services.ConfigureCors();
+builder.Services.ConfigurePersistanceServices();
+builder.Services.ConfigureMySqlContext(builder.Configuration);
+builder.Services.ConfigurePresentationServices();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -18,10 +23,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+var logger = app.Services.GetRequiredService<ILoggerManager>();
+app.ConfigureExceptionHandler(logger);
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
+    //app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }

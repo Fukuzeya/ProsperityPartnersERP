@@ -1,4 +1,5 @@
 ﻿using ProsperityPartners.Application.Contracts.Persistance;
+using ProsperityPartners.Persistance.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,32 @@ namespace ProsperityPartners.Persistance.Repository
 {
     public class RepositoryManager : IRepositoryManager
     {
-        public ICompanyRepository CompanyRepository => throw new NotImplementedException();
+        private readonly RepositoryContext _repositoryContext;
+        private readonly Lazy<ICompanyRepository> _companyRepository;
+        private readonly Lazy<IEmployeeRepository> _employeeRepository;
+        private readonly Lazy<IRecordRepository> _recordRepository;
 
-        public IEmployeeRepository EmployeeRepository => throw new NotImplementedException();
-
-        public IRecordRepository RecordRepository => throw new NotImplementedException();
-
-        public void SaveChanges()
+        public RepositoryManager(RepositoryContext repositoryContext)
         {
-            throw new NotImplementedException();
+            _repositoryContext = repositoryContext;
+            _companyRepository = new Lazy<ICompanyRepository>(() => new
+            CompanyRepository(repositoryContext));
+
+            _employeeRepository = new Lazy<IEmployeeRepository>(() => new
+            EmployeeRepository(repositoryContext));
+
+            _recordRepository = new Lazy<IRecordRepository>(() => new
+            RecordRepository(repositoryContext));
         }
+
+
+        public ICompanyRepository Company => _companyRepository.Value;
+
+        public IEmployeeRepository Employee => _employeeRepository.Value;
+
+        public IRecordRepository Record => _recordRepository.Value;
+
+        public void SaveChanges() => _repositoryContext.SaveChanges();
+        
     }
 }

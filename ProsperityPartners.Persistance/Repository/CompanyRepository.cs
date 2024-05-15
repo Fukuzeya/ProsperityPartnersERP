@@ -1,4 +1,5 @@
-﻿using ProsperityPartners.Application.Contracts.Persistance;
+﻿using Microsoft.EntityFrameworkCore;
+using ProsperityPartners.Application.Contracts.Persistance;
 using ProsperityPartners.Domain.Entities;
 using ProsperityPartners.Persistance.Context;
 using System;
@@ -17,6 +18,11 @@ namespace ProsperityPartners.Persistance.Repository
 
         }
 
-
+        public async Task<IEnumerable<Company>> GetAllCompanies(bool trackChanges)
+        {
+            return await FindAll(trackChanges)
+                .OrderBy(c => c.Name)
+                .ToListAsync();
+        }
     }
 }

@@ -19,6 +19,9 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Infrustructure\" />
+    <Folder Include="Features\EmployeeFeatures\" />
+    <Folder Include="Features\RecordFeatures\" />
+    <Folder Include="Shared\Common\" />
   </ItemGroup>
 
 </Project>

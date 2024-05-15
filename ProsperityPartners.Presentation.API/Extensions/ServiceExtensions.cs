@@ -1,10 +1,14 @@
-﻿namespace ProsperityPartners.Presentation.API.Extensions
+﻿using MediatR;
+using System.Reflection;
+
+namespace ProsperityPartners.Presentation.API.Extensions
 {
     public static class ServiceExtensions
     {
         //Configure Cors
-        public static void ConfigureCors(this IServiceCollection services)
+        public static IServiceCollection ConfigurePresentationServices(this IServiceCollection services)
         {
+            services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", builder =>
@@ -12,6 +16,7 @@
                 .AllowAnyMethod()
                 .AllowAnyHeader());
             });
+            return services;
         }
 
     }

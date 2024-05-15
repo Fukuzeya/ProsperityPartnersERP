@@ -8,9 +8,9 @@ namespace ProsperityPartners.Application.Contracts.Persistance
 {
     public interface IRepositoryManager
     {
-        ICompanyRepository CompanyRepository { get; }
-        IEmployeeRepository EmployeeRepository { get; }
-        IRecordRepository RecordRepository { get; }
+        ICompanyRepository Company { get; }
+        IEmployeeRepository Employee { get; }
+        IRecordRepository Record { get; }
         void SaveChanges();
     }
 }
