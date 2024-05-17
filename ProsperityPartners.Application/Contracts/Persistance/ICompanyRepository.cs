@@ -10,5 +10,6 @@ namespace ProsperityPartners.Application.Contracts.Persistance
     public interface ICompanyRepository
     {
         Task<IEnumerable<Company>> GetAllCompanies(bool trackChanges);
+        Task<Company?> GetCompany(Guid companyId, bool trackChanges);
     }
 }

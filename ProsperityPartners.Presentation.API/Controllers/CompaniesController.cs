@@ -16,9 +16,20 @@ namespace ProsperityPartners.Presentation.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllCompanies()
         {
-            throw new Exception("Exception");
+            //throw new Exception("Exception");
             var result = await _sender.Send(new GetAllCompaniesQuery());
             return Ok(result);
+        }
+
+        [HttpGet("{Id:guid}")]
+        public async Task<IActionResult> GetCompany(Guid Id)
+        {
+            var company = await _sender.Send(new GetCompanyQuery()
+            {
+                CompanyId = Id
+            });
+
+            return Ok(company);
         }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProsperityPartners.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a338f762ae25a92e5df89cf2665162d5e209711e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34dac197d7e37680c205ae179502d6408161e2ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProsperityPartners.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProsperityPartners.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
