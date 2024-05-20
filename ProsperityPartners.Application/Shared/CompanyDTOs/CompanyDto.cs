@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProsperityPartners.Application.Shared.CompanyDTOs
 {
-    public record ReadCompanyDto(
+    public record CompanyDto(
         Guid Id, 
         string Name, 
         string Address,

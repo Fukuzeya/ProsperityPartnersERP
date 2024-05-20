@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc;
 using NLog;
 using ProsperityPartners.Application;
 using ProsperityPartners.Domain.Contracts;
@@ -17,6 +18,11 @@ builder.Services.ConfigurePersistanceServices();
 builder.Services.ConfigureMySqlContext(builder.Configuration);
 builder.Services.ConfigurePresentationServices();
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

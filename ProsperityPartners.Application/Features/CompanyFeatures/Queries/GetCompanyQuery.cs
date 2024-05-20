@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProsperityPartners.Application.Features.CompanyFeatures.Queries
 {
-    public class GetCompanyQuery : IRequest<ReadCompanyDto>
+    public class GetCompanyQuery : IRequest<CompanyDto>
     {
         public Guid CompanyId {  get; set; }
     }

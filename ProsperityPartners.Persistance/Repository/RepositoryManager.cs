@@ -35,7 +35,7 @@ namespace ProsperityPartners.Persistance.Repository
 
         public IRecordRepository Record => _recordRepository.Value;
 
-        public void SaveChanges() => _repositoryContext.SaveChanges();
+        public int SaveChanges() =>  _repositoryContext.SaveChanges();
         
     }
 }

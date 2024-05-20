@@ -15,14 +15,10 @@ namespace ProsperityPartners.Persistance.Repository
         protected RepositoryContext RepositoryContext;
         protected RepositoryBase(RepositoryContext repositoryContext)
             => RepositoryContext = repositoryContext;
-        
-        public void Create(T entity) => RepositoryContext.Set<T>().Add(entity);
+        public async Task Create(T entity) => await RepositoryContext.Set<T>().AddAsync(entity);
         public void Update(T entity) => RepositoryContext.Set<T>().Update(entity);
         public void Delete(T entity) => RepositoryContext.Set<T>().Remove(entity);
-        public async Task<T> GetAsync(Guid Id)
-        {
-            return await RepositoryContext.Set<T>().FindAsync(Id);
-        }
+        public async Task<T?> GetAsync(Guid Id) => await RepositoryContext.Set<T>().FindAsync(Id);
         public async Task<bool> Exists(Guid Id)
         {
             var entity = await GetAsync(Id);

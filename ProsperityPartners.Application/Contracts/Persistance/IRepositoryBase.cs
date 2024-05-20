@@ -11,10 +11,10 @@ namespace ProsperityPartners.Application.Contracts.Persistance
     {
         IQueryable<T> FindAll(bool trackChanges);
         IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChanges);
-        void Create(T entity);
+        Task Create(T entity);
         void Delete(T entity);
         void Update(T entity);
-        Task<T> GetAsync(Guid Id);
+        Task<T?> GetAsync(Guid Id);
         Task<bool> Exists(Guid Id);
 
     }

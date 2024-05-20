@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Infrustructure\" />
-    <Folder Include="Features\EmployeeFeatures\" />
+    <Folder Include="Features\EmployeeFeatures\Commands\" />
     <Folder Include="Features\RecordFeatures\" />
     <Folder Include="Shared\Common\" />
   </ItemGroup>

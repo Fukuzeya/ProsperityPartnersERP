@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProsperityPartners.Domain.Common;
 using ProsperityPartners.Domain.Entities;
 using ProsperityPartners.Persistance.Configuration;
 using System;
@@ -20,6 +21,23 @@ namespace ProsperityPartners.Persistance.Context
             modelBuilder.ApplyConfiguration(new DeductionCodeConfiguration());
         }
 
+        public  override int SaveChanges()
+        {
+            foreach (var entity in ChangeTracker.Entries<BaseAuditableEntity>())
+            {
+                if (entity.State == EntityState.Added)
+                {
+                    entity.Entity.Created = DateTimeOffset.Now;
+                }
+                entity.Entity.LastModified = DateTimeOffset.Now;
+
+                if (entity.State == EntityState.Modified)
+                {
+                    entity.Entity.Created = DateTimeOffset.Now;
+                }
+            }
+            return base.SaveChanges();
+        }
         public DbSet<Batch> Batches { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<DeductionCode> DeductionCodes { get; set;}

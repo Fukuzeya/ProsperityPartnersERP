@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ProsperityPartners.Application.Shared.CompanyDTOs;
+using ProsperityPartners.Application.Shared.EmployeeDTOs;
 using ProsperityPartners.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,13 @@ namespace ProsperityPartners.Application.AutoMapper.Profiles
     {
         public MappingProfile()
         {
-            CreateMap<Company,ReadCompanyDto>();
+            // Company mappings
+            CreateMap<Company, CompanyDto>();
+            CreateMap<CreateCompanyDto, Company>();
+
+            // Employee mappings
+            CreateMap<Employee, EmployeeDto>();
+            
         }
     }
 }
