@@ -16,12 +16,23 @@ namespace ProsperityPartners.Persistance.Repository
             base(repositoryContext) { }
 
         public async Task CreateCompany(Company company) => await  Create(company);
+
+        public void DeleteCompany(Company company) => Delete(company);
+        
         public async Task<IEnumerable<Company>> GetAllCompanies(bool trackChanges)
         {
             return await FindAll(trackChanges)
                 .OrderBy(c => c.Name)
                 .ToListAsync();
         }
+
+        public async Task<IEnumerable<Company>> GetByIds(IEnumerable<Guid> ids, bool trackChanges)
+        {
+            return await FindByCondition(c => ids.Contains(c.Id),trackChanges)
+                .OrderBy(c => c.Name)
+                .ToListAsync();
+        }
+
         public async Task<Company?> GetCompany(Guid companyId, bool trackChanges)
         {
             return await FindByCondition(c => c.Id.Equals(companyId), trackChanges)

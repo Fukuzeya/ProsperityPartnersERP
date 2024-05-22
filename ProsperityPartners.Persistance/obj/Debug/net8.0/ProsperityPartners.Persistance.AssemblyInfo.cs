@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProsperityPartners.Persistance")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39416f707fe93c2030dd0aa1a97f9162bdf54717")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca77f3864f2660eede922a34aaf309e6ad440acb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProsperityPartners.Persistance")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProsperityPartners.Persistance")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

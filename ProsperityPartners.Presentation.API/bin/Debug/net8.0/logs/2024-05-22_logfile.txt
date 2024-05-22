@@ -1,0 +1,1 @@
+2024-05-22 03:39:00.5364 ERROR Something went wrong: The company with id: 08dc78d9-361a-4da0-8665-fa4b7439ca6f does not exist in the database.

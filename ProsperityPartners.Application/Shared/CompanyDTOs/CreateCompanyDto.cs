@@ -6,14 +6,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProsperityPartners.Application.Shared.EmployeeDTOs;
 
 namespace ProsperityPartners.Application.Shared.CompanyDTOs
 {
-    public class CreateCompanyDto
-    {
-        public required string Name { get; set; }
-        public required string Address { get; set; }
-        public required string Owner { get; set; }
-    }
+    public record CreateCompanyDto
+    (
+        string Name,
+        string Address,
+        string Owner,
+        IEnumerable<CreateEmployeeDto> Employees
+    );
+    
 
 }

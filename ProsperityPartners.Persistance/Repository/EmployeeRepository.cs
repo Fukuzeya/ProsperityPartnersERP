@@ -17,6 +17,14 @@ namespace ProsperityPartners.Persistance.Repository
         {
         }
 
+        public async Task CreateEmployee(Guid companyId, Employee employee)
+        {
+            employee.CompanyId = companyId;
+            await Create(employee);
+        }
+
+        public void DeleteEmployee(Employee employee) => Delete(employee);
+        
         public async Task<Employee?> GetEmployee(Guid companyId, Guid Id, bool trackChanges)
         {
             return await FindByCondition(emp => emp.CompanyId.Equals(companyId)
@@ -29,5 +37,7 @@ namespace ProsperityPartners.Persistance.Repository
                 .OrderBy(e => e.LastName)
                 .ToListAsync();
         }
+    
+        
     }
 }

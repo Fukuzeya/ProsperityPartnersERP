@@ -11,5 +11,7 @@ namespace ProsperityPartners.Application.Contracts.Persistance
     {
         Task<IEnumerable<Employee>> GetEmployees(Guid companyId, bool trackChanges);
         Task<Employee?> GetEmployee(Guid companyId, Guid Id, bool trackChanges);
+        Task CreateEmployee(Guid companyId, Employee employee);
+        void DeleteEmployee(Employee employee);
     }
 }

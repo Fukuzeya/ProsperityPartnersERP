@@ -9,6 +9,14 @@ using System.Threading.Tasks;
 
 namespace ProsperityPartners.Application.Shared.EmployeeDTOs
 {
-    public record EmployeeDto(Guid Id,string FirstName,string lastName,
-        string Email,string Phone,string Position);
+    public record EmployeeDto
+    (
+        Guid Id,
+        string FirstName,
+        string lastName,
+        string Email,
+        string Phone,
+        string Position,
+        Guid CompanyId
+    );
 }
