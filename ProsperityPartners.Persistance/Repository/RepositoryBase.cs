@@ -18,10 +18,10 @@ namespace ProsperityPartners.Persistance.Repository
         public async Task Create(T entity) => await RepositoryContext.Set<T>().AddAsync(entity);
         public void Update(T entity) => RepositoryContext.Set<T>().Update(entity);
         public void Delete(T entity) => RepositoryContext.Set<T>().Remove(entity);
-        public async Task<T?> GetAsync(Guid Id) => await RepositoryContext.Set<T>().FindAsync(Id);
+        public async Task<T?> GetAsync(Guid Id,bool trackChanges) => await RepositoryContext.Set<T>().FindAsync(Id);
         public async Task<bool> Exists(Guid Id)
         {
-            var entity = await GetAsync(Id);
+            var entity = await GetAsync(Id,false);
             return entity != null;
         }
         public IQueryable<T> FindAll(bool trackChanges)

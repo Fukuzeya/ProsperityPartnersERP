@@ -6,6 +6,7 @@ using ProsperityPartners.Application;
 using ProsperityPartners.Domain.Contracts;
 using ProsperityPartners.Persistance;
 using ProsperityPartners.Presentation.API;
+using ProsperityPartners.Presentation.API.ActionFilters;
 using ProsperityPartners.Presentation.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 });
 
+builder.Services.AddScoped<ValidationFilterAttribute>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

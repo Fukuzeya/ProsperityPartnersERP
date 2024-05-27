@@ -14,7 +14,7 @@ namespace ProsperityPartners.Application.Contracts.Persistance
         Task Create(T entity);
         void Delete(T entity);
         void Update(T entity);
-        Task<T?> GetAsync(Guid Id);
+        Task<T?> GetAsync(Guid Id, bool trackChanges);
         Task<bool> Exists(Guid Id);
 
     }

@@ -10,13 +10,6 @@ using ProsperityPartners.Application.Shared.EmployeeDTOs;
 
 namespace ProsperityPartners.Application.Shared.CompanyDTOs
 {
-    public record CreateCompanyDto
-    (
-        string Name,
-        string Address,
-        string Owner,
-        IEnumerable<CreateEmployeeDto> Employees
-    );
-    
+    public record CreateCompanyDto : ManipulateCompanyDto;
 
 }

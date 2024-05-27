@@ -9,12 +9,6 @@ using System.Threading.Tasks;
 
 namespace ProsperityPartners.Application.Shared.CompanyDTOs
 {
-    public class UpdateCompanyDto
-    {
-        public Guid Id { get; set; }
-        public required string Name { get; set; }
-        public required string Address { get; set; }
-        public required string Owner { get; set; }
-        public List<DeductionCode>? DeductionCodes { get; set; }
-    }
+    public record UpdateCompanyDto : ManipulateCompanyDto;
+    
 }

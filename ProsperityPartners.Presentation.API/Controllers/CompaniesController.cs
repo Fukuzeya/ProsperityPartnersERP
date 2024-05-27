@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProsperityPartners.Application.Features.CompanyFeatures.Commands;
 using ProsperityPartners.Application.Features.CompanyFeatures.Queries;
 using ProsperityPartners.Application.Shared.CompanyDTOs;
+using ProsperityPartners.Presentation.API.ActionFilters;
 using ProsperityPartners.Presentation.API.ModelBinders;
 
 namespace ProsperityPartners.Presentation.API.Controllers
@@ -36,18 +37,15 @@ namespace ProsperityPartners.Presentation.API.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCompany([FromBody] CreateCompanyDto createCompanyDto)
         {
-            if (createCompanyDto is null)
-                return BadRequest("Company Dto is null");
-
             var company = await _sender.Send(new CreateCompanyCommand()
             {
                 CreateCompanyDto = createCompanyDto
             });
             return CreatedAtRoute("CompanyById", new {id = company.Id},company);
         }
-
 
         [HttpGet("collection/({ids})",Name ="CompanyCollection")]
         public async Task<IActionResult> GetCompanyCollection([ModelBinder(BinderType =
@@ -59,6 +57,7 @@ namespace ProsperityPartners.Presentation.API.Controllers
         }
 
         [HttpPost("collection")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCompanyCollection([FromBody] IEnumerable<CreateCompanyDto> companyCollection)
         {
             var result = await _sender.Send(new CreateCompanyCollectionCommand(companyCollection));
@@ -69,6 +68,14 @@ namespace ProsperityPartners.Presentation.API.Controllers
         public async Task<IActionResult> DeleteCompany(Guid id)
         {
             await _sender.Send(new DeleteCompanyCommand(id));
+            return NoContent();
+        }
+
+        [HttpPut("{id:guid}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> UpdateCompany(Guid id, [FromBody] UpdateCompanyDto updateCompanyDto)
+        {
+            await _sender.Send(new UpdateCompanyCommand(id, updateCompanyDto,trackChanges:true));
             return NoContent();
         }
     }

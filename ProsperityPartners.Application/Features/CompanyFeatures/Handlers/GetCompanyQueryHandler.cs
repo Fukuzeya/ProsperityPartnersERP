@@ -23,11 +23,7 @@ namespace ProsperityPartners.Application.Features.CompanyFeatures.Handlers
         }
         public async Task<CompanyDto> Handle(GetCompanyQuery request, CancellationToken cancellationToken)
         {
-            var company = await _repositoryManager.Company.GetCompany(request.CompanyId, trackChanges: false);
-
-            if (company is null)
-                throw new CompanyNotFoundException(request.CompanyId);
-
+            var company = await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.CompanyId, trackChanges: false);
             var companyDto = _mapper.Map<CompanyDto>(company);
             return companyDto;
         }

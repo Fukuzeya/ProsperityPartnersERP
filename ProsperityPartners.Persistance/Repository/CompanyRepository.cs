@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProsperityPartners.Application.Contracts.Persistance;
 using ProsperityPartners.Domain.Entities;
+using ProsperityPartners.Domain.Exceptions;
 using ProsperityPartners.Persistance.Context;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,14 @@ namespace ProsperityPartners.Persistance.Repository
             return await FindByCondition(c => c.Id.Equals(companyId), trackChanges)
                 .SingleOrDefaultAsync();
         }
- 
 
+        public async Task<Company> GetCompanyAndCheckIfItExists(Guid companyId, bool trackChanges)
+        {
+            var company = await GetAsync(companyId,trackChanges);
+            if(company is null)
+                throw new CompanyNotFoundException(companyId);
+            return company;
+
+        }
     }
 }

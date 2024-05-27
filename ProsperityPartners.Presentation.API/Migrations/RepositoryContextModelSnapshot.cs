@@ -154,7 +154,7 @@ namespace ProsperityPartners.Presentation.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("13a377c0-ea91-4ed3-8f73-80de96cf1026"),
+                            Id = new Guid("74f4ff4d-7309-4962-a365-948174a6ac19"),
                             Code = "254576666323587",
                             CompanyId = new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
@@ -213,7 +213,7 @@ namespace ProsperityPartners.Presentation.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b44608fb-1fe8-43c4-9ad3-fa34b91a64e4"),
+                            Id = new Guid("6b13183f-cda1-407b-a0d6-8b7a511349ec"),
                             CompanyId = new Guid("c9d4c053-49b6-410c-bc78-2d54a9991870"),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Email = "panashe.mhlanga@gmail.com",
@@ -225,7 +225,7 @@ namespace ProsperityPartners.Presentation.API.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8c80bee5-6411-4beb-80a0-b92dfc330bd7"),
+                            Id = new Guid("e152f9cd-3b3f-48aa-aeeb-36423bb74751"),
                             CompanyId = new Guid("3d490a70-94ce-4d15-9494-5248280c2ce3"),
                             Created = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Email = "nyasha.musongora@gmail.com",

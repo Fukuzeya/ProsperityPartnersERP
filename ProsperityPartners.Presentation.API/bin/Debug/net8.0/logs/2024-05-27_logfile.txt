@@ -1,0 +1,2 @@
+2024-05-27 03:32:26.9278 ERROR Something went wrong: The company with id: 08dc78d8-6e84-476f-8945-34bf0ff3ca87 does not exist in the database.
+2024-05-27 03:32:27.4372 ERROR Something went wrong: The company with id: 08dc78d8-6e84-476f-8945-34bf0ff3ca87 does not exist in the database.

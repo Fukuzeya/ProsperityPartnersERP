@@ -17,6 +17,7 @@ namespace ProsperityPartners.Application.AutoMapper.Profiles
             // Company mappings
             CreateMap<Company, CompanyDto>();
             CreateMap<CreateCompanyDto, Company>();
+            CreateMap<UpdateCompanyDto, Company>();
 
             // Employee mappings
             CreateMap<Employee, EmployeeDto>();
