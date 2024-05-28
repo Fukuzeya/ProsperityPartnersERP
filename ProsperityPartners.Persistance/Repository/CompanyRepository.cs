@@ -48,5 +48,7 @@ namespace ProsperityPartners.Persistance.Repository
             return company;
 
         }
+
+        public void UpdateCompany(Company company) => Update(company);
     }
 }

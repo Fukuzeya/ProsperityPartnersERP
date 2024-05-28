@@ -15,5 +15,6 @@ namespace ProsperityPartners.Application.Contracts.Persistance
         Task<Company> GetCompanyAndCheckIfItExists(Guid companyId, bool trackChanges);
         Task CreateCompany(Company company);
         void DeleteCompany(Company company);
+        void UpdateCompany(Company company);
     }
 }

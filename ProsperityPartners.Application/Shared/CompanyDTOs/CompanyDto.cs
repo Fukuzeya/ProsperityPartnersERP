@@ -1,5 +1,4 @@
 ﻿using ProsperityPartners.Application.Shared.EmployeeDTOs;
-using ProsperityPartners.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -23,7 +23,7 @@ namespace ProsperityPartners.Application.Features.CompanyFeatures.Handlers
         }
         public async Task<Unit> Handle(DeleteCompanyCommand request, CancellationToken cancellationToken)
         {
-            var company = await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.companyId, trackChanges: false);
+            var company = await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.companyId, trackChanges: true);
             
             _repositoryManager.Company.DeleteCompany(company);
             _repositoryManager.SaveChanges();

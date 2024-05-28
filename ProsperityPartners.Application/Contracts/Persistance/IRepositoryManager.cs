@@ -11,6 +11,8 @@ namespace ProsperityPartners.Application.Contracts.Persistance
         ICompanyRepository Company { get; }
         IEmployeeRepository Employee { get; }
         IRecordRepository Record { get; }
+        IBatchRepository Batch { get; }
+        IDeductionCodeRepository DeductionCode { get; }
         int SaveChanges();
     }
 }

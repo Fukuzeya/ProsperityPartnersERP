@@ -16,7 +16,6 @@ namespace ProsperityPartners.Domain.Entities
         [ForeignKey(nameof(Company))]
         public Guid CompanyId {  get; set; }
         public Company? Company { get; set; }
-
         public ICollection<Record>? Records { get; set; }
 
     }

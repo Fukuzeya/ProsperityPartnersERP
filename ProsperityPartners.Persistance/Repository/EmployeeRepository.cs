@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProsperityPartners.Application.Contracts.Persistance;
 using ProsperityPartners.Domain.Entities;
+using ProsperityPartners.Domain.Exceptions;
 using ProsperityPartners.Persistance.Context;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace ProsperityPartners.Persistance.Repository
         {
         }
 
+
         public async Task CreateEmployee(Guid companyId, Employee employee)
         {
             employee.CompanyId = companyId;
@@ -27,10 +29,16 @@ namespace ProsperityPartners.Persistance.Repository
         
         public async Task<Employee?> GetEmployee(Guid companyId, Guid Id, bool trackChanges)
         {
-            return await FindByCondition(emp => emp.CompanyId.Equals(companyId)
+            var employee =  await FindByCondition(emp => emp.CompanyId.Equals(companyId)
                 && emp.Id.Equals(Id),trackChanges).SingleOrDefaultAsync();
+
+            if(employee is null)
+                throw new EmployeeNotFoundException(Id);
+            return employee;
+
         }
 
+ 
         public async Task<IEnumerable<Employee>> GetEmployees(Guid companyId, bool trackChanges)
         {
             return await FindByCondition(e => e.CompanyId.Equals(companyId),trackChanges)

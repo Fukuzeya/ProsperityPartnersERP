@@ -25,10 +25,7 @@ namespace ProsperityPartners.Application.Features.EmployeeFeatures.Handlers
         }
         public async Task<EmployeeDto> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
         {
-            var company = await _repositoryManager.Company.GetCompany(request.companyId, trackChanges: false);
-
-            if (company is null)
-                throw new CompanyNotFoundException(request.companyId);
+            await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.companyId, trackChanges: false);
 
             var employeeEntity =  _mapper.Map<Employee>(request.CreateEmployeeDto);
             await _repositoryManager.Employee.CreateEmployee(request.companyId, employeeEntity);

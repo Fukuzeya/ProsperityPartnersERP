@@ -1,0 +1,18 @@
+﻿using ProsperityPartners.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProsperityPartners.Application.Shared.DeductionCodeDTOs
+{
+    public record DeductionCodeDto
+    (
+        Guid Id,
+        string Code,
+        Guid CompanyId  
+    );
+}

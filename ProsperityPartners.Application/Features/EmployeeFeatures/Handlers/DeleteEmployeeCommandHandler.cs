@@ -23,15 +23,12 @@ namespace ProsperityPartners.Application.Features.EmployeeFeatures.Handlers
         }
         public async Task<Unit> Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
         {
-            var company = await _repositoryManager.Company.GetCompany(request.companyId,trackChanges: false);
-            if (company is null)
-                throw new CompanyNotFoundException(request.companyId);
+            await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.companyId,trackChanges: false);
 
-            var employeeForCompany = await _repositoryManager.Employee.GetEmployee(request.companyId, request.employeeId,trackChanges:false);
-            if (employeeForCompany is null)
-                throw new EmployeeNotFoundException(request.employeeId);
+            var employeeEntity = await _repositoryManager.Employee.GetEmployee(request.companyId, request.employeeId, true);
 
-            _repositoryManager.Employee.DeleteEmployee(employeeForCompany);
+
+            _repositoryManager.Employee.DeleteEmployee(employeeEntity);
             _repositoryManager.SaveChanges();
             return Unit.Value;
         }

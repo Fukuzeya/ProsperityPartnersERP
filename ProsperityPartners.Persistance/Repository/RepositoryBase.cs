@@ -12,13 +12,13 @@ namespace ProsperityPartners.Persistance.Repository
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected RepositoryContext RepositoryContext;
+        protected  RepositoryContext RepositoryContext;
         protected RepositoryBase(RepositoryContext repositoryContext)
             => RepositoryContext = repositoryContext;
         public async Task Create(T entity) => await RepositoryContext.Set<T>().AddAsync(entity);
         public void Update(T entity) => RepositoryContext.Set<T>().Update(entity);
         public void Delete(T entity) => RepositoryContext.Set<T>().Remove(entity);
-        public async Task<T?> GetAsync(Guid Id,bool trackChanges) => await RepositoryContext.Set<T>().FindAsync(Id);
+        public async Task<T> GetAsync(Guid Id,bool trackChanges) => await RepositoryContext.Set<T>().FindAsync(Id);
         public async Task<bool> Exists(Guid Id)
         {
             var entity = await GetAsync(Id,false);

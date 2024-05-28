@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProsperityPartners.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca77f3864f2660eede922a34aaf309e6ad440acb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7bede98d02c7d9c31a0a9da29e94e84c6677a32")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProsperityPartners.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProsperityPartners.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
