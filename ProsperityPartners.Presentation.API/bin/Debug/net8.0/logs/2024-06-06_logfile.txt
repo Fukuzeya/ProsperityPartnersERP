@@ -1,0 +1,1 @@
+2024-06-06 20:57:34.3491 ERROR Something went wrong: The Batch with id: c9d4c053-49b6-410c-bc78-2d54a9991870 does not exist in the database.

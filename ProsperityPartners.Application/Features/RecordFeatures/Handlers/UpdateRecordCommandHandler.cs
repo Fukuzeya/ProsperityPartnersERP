@@ -23,6 +23,7 @@ namespace ProsperityPartners.Application.Features.RecordFeatures.Handlers
         }
         public async Task<Unit> Handle(UpdateRecordCommand request, CancellationToken cancellationToken)
         {
+            await _repositoryManager.Batch.BatchExists(request.UpdateRecordDto.BatchId);
             var record = _mapper.Map<Record>(request.UpdateRecordDto);
             _repositoryManager.Record.UpdateRecord(record);
             _repositoryManager.SaveChanges();

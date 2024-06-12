@@ -23,7 +23,7 @@ namespace ProsperityPartners.Application.Features.DeductionCodeFeatures.Handlers
         }
         public async Task<DeductionCodeDto> Handle(GetDeductionCodeQuery request, CancellationToken cancellationToken)
         {
-            await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.companyId, trackChanges: false);
+            await _repositoryManager.DeductionCode.GetDeductionCodeAsync(request.Id,trackChanges:false);
             var deductionCode = await _repositoryManager.DeductionCode
                 .GetDeductionCodeAsync(request.Id, trackChanges: false);
             var deductionCodeDto = _mapper.Map<DeductionCodeDto>(deductionCode);

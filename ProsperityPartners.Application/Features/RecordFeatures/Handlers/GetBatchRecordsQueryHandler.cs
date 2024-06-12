@@ -24,7 +24,7 @@ namespace ProsperityPartners.Application.Features.RecordFeatures.Handlers
         public async Task<IEnumerable<RecordDto>> Handle(GetBatchRecordsQuery request, CancellationToken cancellationToken)
         {
             // Check if batch exists
-            await _repositoryManager.Batch.BatchExists(request.batchId);
+            await _repositoryManager.Batch.GetBatchAsync(request.batchId,trackChanges:false);
             var batchRecords = await _repositoryManager.Record
                 .GetBatchRecordsAsync(request.batchId, trackChanges: false);
             var batchRecordsDto = _mapper.Map<IEnumerable<RecordDto>>(batchRecords);

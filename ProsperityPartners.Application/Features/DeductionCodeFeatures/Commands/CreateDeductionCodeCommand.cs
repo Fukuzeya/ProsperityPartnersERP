@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 namespace ProsperityPartners.Application.Features.DeductionCodeFeatures.Commands
 {
     public record CreateDeductionCodeCommand
-        (
-            Guid companyId, 
+        ( 
             CreateDeductionCodeDto CreateDeductionCodeDto
         ) : IRequest<DeductionCodeDto>;
 }

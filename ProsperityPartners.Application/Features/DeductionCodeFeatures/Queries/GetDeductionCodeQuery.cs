@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace ProsperityPartners.Application.Features.DeductionCodeFeatures.Queries
 {
-    public record GetDeductionCodeQuery(Guid companyId, Guid Id) : IRequest<DeductionCodeDto>;
+    public record GetDeductionCodeQuery(Guid Id) : IRequest<DeductionCodeDto>;
 }

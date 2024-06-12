@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace ProsperityPartners.Application.Features.BatchFeatures.Commands
 {
-    public record UpdateBatchCommand(Guid deductionCodeId,UpdateBatchDto UpdateBatchDto) : IRequest<Unit>;
+    public record UpdateBatchCommand(Guid Id, UpdateBatchDto UpdateBatchDto) : IRequest<Unit>;
 }

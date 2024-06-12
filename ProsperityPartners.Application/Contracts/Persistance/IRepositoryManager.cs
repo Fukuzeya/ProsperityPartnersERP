@@ -13,6 +13,7 @@ namespace ProsperityPartners.Application.Contracts.Persistance
         IRecordRepository Record { get; }
         IBatchRepository Batch { get; }
         IDeductionCodeRepository DeductionCode { get; }
+        IAuthenticationService Authentication { get; }
         int SaveChanges();
     }
 }

@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace ProsperityPartners.Application.Features.DeductionCodeFeatures.Commands
 {
-    public record DeleteDeductionCodeCommand(Guid companyId, Guid Id) : IRequest<Unit>;
+    public record DeleteDeductionCodeCommand(Guid Id) : IRequest<Unit>;
 }

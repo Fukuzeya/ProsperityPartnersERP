@@ -1,0 +1,5 @@
+2024-06-09 12:03:07.3834 ERROR Something went wrong: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+CreateBatchDto -> Batch
+ProsperityPartners.Application.Shared.BatchDTOs.CreateBatchDto -> ProsperityPartners.Domain.Entities.Batch

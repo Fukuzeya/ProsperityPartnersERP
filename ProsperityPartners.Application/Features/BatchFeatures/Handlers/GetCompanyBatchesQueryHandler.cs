@@ -23,6 +23,7 @@ namespace ProsperityPartners.Application.Features.BatchFeatures.Handlers
         }
         public async Task<IEnumerable<BatchDto>> Handle(GetCompanyBatchesQuery request, CancellationToken cancellationToken)
         {
+            await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.companyId,trackChanges:false);
             var companyBatches = await _repositoryManager.Batch.GetCompanyBatchesAsync(request.companyId, trackChanges: false);
             var batchesDto = _mapper.Map<IEnumerable<BatchDto>>(companyBatches);
             return batchesDto;

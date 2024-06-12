@@ -7,10 +7,7 @@ namespace ProsperityPartners.Presentation.API.ActionFilters
     {
         public ValidationFilterAttribute() { }
 
-        public void OnActionExecuted(ActionExecutedContext context)
-        {
-            throw new NotImplementedException();
-        }
+        public void OnActionExecuted(ActionExecutedContext context){}
 
         public void OnActionExecuting(ActionExecutingContext context)
         {

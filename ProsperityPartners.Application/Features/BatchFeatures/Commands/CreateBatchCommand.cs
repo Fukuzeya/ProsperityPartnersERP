@@ -10,7 +10,6 @@ namespace ProsperityPartners.Application.Features.BatchFeatures.Commands
 {
     public record CreateBatchCommand
     (
-        Guid deductionCodeId,
         CreateBatchDto CreateBatchDto
     ) : IRequest<BatchDto>;
 }

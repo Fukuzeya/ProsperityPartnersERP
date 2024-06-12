@@ -22,6 +22,7 @@ namespace ProsperityPartners.Domain.Entities
         public string Owner { get; set; } = string.Empty;
         public ICollection<DeductionCode>? DeductionCodes { get; set; }
         public ICollection<Employee>? Employees { get; set; }
+        public ICollection<User>? Users { get; set; }
 
     }
 }

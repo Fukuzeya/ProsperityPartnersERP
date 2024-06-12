@@ -24,6 +24,7 @@ namespace ProsperityPartners.Application.Features.RecordFeatures.Handlers
         }
         public async Task<RecordDto> Handle(CreateRecordCommand request, CancellationToken cancellationToken)
         {
+            await _repositoryManager.DeductionCode.GetDeductionCodeAsync(request.CreateRecordDto.DeductionCodeId, trackChanges: false);
             var recordEntity = _mapper.Map<Record>(request.CreateRecordDto);
             await _repositoryManager.Record.CreateRecord(recordEntity);
             _repositoryManager.SaveChanges();

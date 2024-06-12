@@ -25,7 +25,7 @@ namespace ProsperityPartners.Application.Features.DeductionCodeFeatures.Handlers
         public async Task<DeductionCodeDto> Handle(CreateDeductionCodeCommand request, CancellationToken cancellationToken)
         {
             // check if company exists
-            await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.companyId, trackChanges: false);
+            await _repositoryManager.Company.GetCompanyAndCheckIfItExists(request.CreateDeductionCodeDto.CompanyId, trackChanges: false);
             var deductionCodeEntiry = _mapper.Map<DeductionCode>(request.CreateDeductionCodeDto);
             await _repositoryManager.DeductionCode.CreateDeductionCode(deductionCodeEntiry);
             _repositoryManager.SaveChanges();

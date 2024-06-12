@@ -9,3 +9,4 @@ C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartne
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Infrastructure\obj\Debug\net8.0\refint\ProsperityPartners.Infrastructure.dll
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Infrastructure\obj\Debug\net8.0\ProsperityPartners.Infrastructure.pdb
 C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Infrastructure\obj\Debug\net8.0\ref\ProsperityPartners.Infrastructure.dll
+C:\Users\hp\Desktop\ProsperityPartners\ProsperityPartnersServer\ProsperityPartners\ProsperityPartners.Infrastructure\obj\Debug\net8.0\ProsperityPartners.Infrastructure.sourcelink.json

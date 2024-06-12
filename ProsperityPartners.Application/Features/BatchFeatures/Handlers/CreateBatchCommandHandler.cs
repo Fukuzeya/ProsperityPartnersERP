@@ -24,7 +24,7 @@ namespace ProsperityPartners.Application.Features.BatchFeatures.Handlers
         }
         public async Task<BatchDto> Handle(CreateBatchCommand request, CancellationToken cancellationToken)
         {
-            await _repositoryManager.DeductionCode.DeductionCodeExists(request.deductionCodeId);
+            await _repositoryManager.DeductionCode.GetDeductionCodeAsync(request.CreateBatchDto.DeductionCodeId,trackChanges:false);
             var batchEntity = _mapper.Map<Batch>(request.CreateBatchDto);
             await _repositoryManager.Batch.CreateBatchAsync(batchEntity);
             _repositoryManager.SaveChanges();

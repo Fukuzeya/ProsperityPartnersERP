@@ -1,4 +1,9 @@
-﻿using ProsperityPartners.Application.Contracts.Persistance;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using ProsperityPartners.Application.Contracts.Persistance;
+using ProsperityPartners.Domain.Contracts;
+using ProsperityPartners.Domain.Entities;
 using ProsperityPartners.Persistance.Context;
 using System;
 using System.Collections.Generic;
@@ -16,8 +21,11 @@ namespace ProsperityPartners.Persistance.Repository
         private readonly Lazy<IRecordRepository> _recordRepository;
         private readonly Lazy<IBatchRepository> _batchRepository;
         private readonly Lazy<IDeductionCodeRepository> _deductionCodeRepository;
+        private readonly Lazy<IAuthenticationService> _authenticationService;
 
-        public RepositoryManager(RepositoryContext repositoryContext)
+        public RepositoryManager(RepositoryContext repositoryContext,
+            ILoggerManager logger, IMapper mapper,
+         UserManager<User> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager)
         {
             _repositoryContext = repositoryContext;
             _companyRepository = new Lazy<ICompanyRepository>(() => new
@@ -35,6 +43,9 @@ namespace ProsperityPartners.Persistance.Repository
             _deductionCodeRepository = new Lazy<IDeductionCodeRepository>(() => new 
             DeductionCodeRepository(repositoryContext));
 
+            _authenticationService = new Lazy<IAuthenticationService>(() => new
+            AuthenticationService(logger, mapper,userManager, configuration, roleManager));
+
         }
 
 
@@ -47,6 +58,8 @@ namespace ProsperityPartners.Persistance.Repository
         public IBatchRepository Batch => _batchRepository.Value;
 
         public IDeductionCodeRepository DeductionCode => _deductionCodeRepository.Value;
+
+        public IAuthenticationService Authentication => _authenticationService.Value;
 
         public int SaveChanges() =>  _repositoryContext.SaveChanges();
         

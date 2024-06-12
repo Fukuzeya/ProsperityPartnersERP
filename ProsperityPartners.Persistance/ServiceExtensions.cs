@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProsperityPartners.Application.Contracts.Persistance;
+using ProsperityPartners.Domain.Entities;
 using ProsperityPartners.Persistance.Context;
 using ProsperityPartners.Persistance.Repository;
 using System;
@@ -18,6 +20,7 @@ namespace ProsperityPartners.Persistance
         {
             services.AddScoped<IRepositoryManager, RepositoryManager>();
 
+
             return services;
         }
 
@@ -27,6 +30,6 @@ namespace ProsperityPartners.Persistance
             .UseMySql(configuration.GetConnectionString("DefaultConnection"), 
             MySqlServerVersion.LatestSupportedServerVersion));
         }
-            
+
     }
 }

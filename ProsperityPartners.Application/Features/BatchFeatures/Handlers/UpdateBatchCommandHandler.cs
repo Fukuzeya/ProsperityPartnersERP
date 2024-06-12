@@ -24,7 +24,8 @@ namespace ProsperityPartners.Application.Features.BatchFeatures.Handlers
         public async Task<Unit> Handle(UpdateBatchCommand request, CancellationToken cancellationToken)
         {
             // Check if Deduction Code for the batch exists
-            await _repositoryManager.DeductionCode.DeductionCodeExists(request.deductionCodeId);
+            await _repositoryManager.DeductionCode.DeductionCodeExists(request.UpdateBatchDto.DeductionCodeId);
+            await _repositoryManager.Batch.GetBatchAsync(request.Id,trackChanges:false);
             var batchEntity = _mapper.Map<Batch>(request.UpdateBatchDto);
             _repositoryManager.Batch.UpdateBatch(batchEntity);
             _repositoryManager.SaveChanges();

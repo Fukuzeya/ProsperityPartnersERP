@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ProsperityPartners.Domain.Common;
 using ProsperityPartners.Domain.Entities;
 using ProsperityPartners.Persistance.Configuration;
@@ -10,15 +11,17 @@ using System.Threading.Tasks;
 
 namespace ProsperityPartners.Persistance.Context
 {
-    public class RepositoryContext : DbContext
+    public class RepositoryContext : IdentityDbContext<User>
     {
         public RepositoryContext(DbContextOptions options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new CompanyConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new DeductionCodeConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
         }
 
         public  override int SaveChanges()

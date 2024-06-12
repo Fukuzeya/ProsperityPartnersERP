@@ -23,6 +23,7 @@ namespace ProsperityPartners.Application.Features.BatchFeatures.Handlers
         }
         public async Task<IEnumerable<BatchDto>> Handle(GetDeductionCodeBatchesQuery request, CancellationToken cancellationToken)
         {
+            await _repositoryManager.DeductionCode.GetDeductionCodeAsync(request.deductionCodeId,trackChanges:false);
             var batches = await _repositoryManager.Batch.GetDeductionCodeBatchesAsync(request.deductionCodeId, trackChanges: false);
             var batchesDto = _mapper.Map<IEnumerable<BatchDto>>(batches);
             return batchesDto;

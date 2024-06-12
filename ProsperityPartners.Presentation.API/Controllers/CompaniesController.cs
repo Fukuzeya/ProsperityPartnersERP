@@ -1,15 +1,23 @@
-﻿using MediatR;
+﻿using Asp.Versioning;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
+using ProsperityPartners.Application.Features.BatchFeatures.Queries;
 using ProsperityPartners.Application.Features.CompanyFeatures.Commands;
 using ProsperityPartners.Application.Features.CompanyFeatures.Queries;
+using ProsperityPartners.Application.Features.DeductionCodeFeatures.Queries;
+using ProsperityPartners.Application.Features.RecordFeatures.Queries;
 using ProsperityPartners.Application.Shared.CompanyDTOs;
 using ProsperityPartners.Presentation.API.ActionFilters;
 using ProsperityPartners.Presentation.API.ModelBinders;
 
 namespace ProsperityPartners.Presentation.API.Controllers
 {
-    [Route("api/companies")]
+    [ApiVersion("1.0")]
+    [Route("api/v{v:apiversion}/companies")]
+    //[ResponseCache(CacheProfileName = "120SecondsDuration")]
+    [OutputCache(PolicyName = "120SecondsDuration")]
     [ApiController]
     public class CompaniesController : ControllerBase
     {
@@ -18,6 +26,7 @@ namespace ProsperityPartners.Presentation.API.Controllers
         public CompaniesController(ISender sender) => _sender = sender;
 
         [HttpGet]
+        //[ResponseCache(Duration = 60)]
         public async Task<IActionResult> GetAllCompanies()
         {
             //throw new Exception("Exception");
@@ -25,7 +34,30 @@ namespace ProsperityPartners.Presentation.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{Id:guid}/deductionCodes")]
+        public async Task<IActionResult> GetCompanyDeductionCodes(Guid Id)
+        {
+            var deductionCodes = await _sender.Send(new GetCompanyDeductionCodesQuery(Id));
+            return Ok(deductionCodes);
+        }
+
+        [HttpGet("{Id:guid}/batches")]
+        public async Task<IActionResult> GetCompanyBatches(Guid Id)
+        {
+            var batches = await _sender.Send(new GetCompanyBatchesQuery(Id));
+            return Ok(batches);
+        }
+
+        [HttpGet("{Id:guid}/records")]
+        public async Task<IActionResult> GetCompanyRecords(Guid Id)
+        {
+            var records = await _sender.Send(new GetCompanyRecordsQuery(Id));
+            return Ok(records);
+        }
+
         [HttpGet("{Id:guid}", Name = "CompanyById")]
+        //[ResponseCache(Duration = 60)]
+        [OutputCache(Duration = 60)]
         public async Task<IActionResult> GetCompany(Guid Id)
         {
             var company = await _sender.Send(new GetCompanyQuery()
@@ -38,6 +70,7 @@ namespace ProsperityPartners.Presentation.API.Controllers
 
         [HttpPost]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
+        [OutputCache(NoStore = true)]
         public async Task<IActionResult> CreateCompany([FromBody] CreateCompanyDto createCompanyDto)
         {
             var company = await _sender.Send(new CreateCompanyCommand()
@@ -65,6 +98,7 @@ namespace ProsperityPartners.Presentation.API.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [OutputCache(NoStore = true)]
         public async Task<IActionResult> DeleteCompany(Guid id)
         {
             await _sender.Send(new DeleteCompanyCommand(id));
